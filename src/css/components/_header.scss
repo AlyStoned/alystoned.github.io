@@ -1,0 +1,24 @@
+@import "../deps";
+
+
+#app-header {
+  position: absolute;
+  top: $header_top_offset_tablet;
+  left: 0;
+  z-index: 2;
+  background-color: transparent;
+  width: 100%;
+
+  @include for-tablet-landscape-up() {
+    top: $header_top_offset_desktop;
+  }
+  @include for-phone-only() {
+    top: $header_top_offset_mobile;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

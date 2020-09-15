@@ -1,0 +1,17 @@
+@import "../../deps";
+
+
+#case-reviews {
+  margin-top: 68px;
+  margin-bottom: 40px;
+  @include for-phone-only() {
+    margin-top: 45px;
+  }
+
+  .case-reviews-list {
+    margin-top: 45px;
+    @include for-phone-only() {
+      margin-top: 37px;
+    }
+  }
+}
