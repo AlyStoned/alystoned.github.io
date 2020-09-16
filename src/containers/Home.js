@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useRouteData } from "react-static";
 
+import ScrollToElement from "../components/ScrollToElement";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AboutBlock from "../components/blocks/About";
@@ -23,7 +24,7 @@ export default () => {
     } = useRouteData();
 
     return (
-        <Fragment>
+        <ScrollToElement>
             <Header />
 
             <main id="app-main">
@@ -64,6 +65,6 @@ export default () => {
             </main>
 
             <Footer />
-        </Fragment>
+        </ScrollToElement>
     )
 }

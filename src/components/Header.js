@@ -4,7 +4,6 @@ import ExactNavLink from "./ExactNavLink";
 import Brand from "./Brand";
 import HeaderMenu from "./HeaderMenu";
 import menuItems from "../constants/menu";
-import { SITE_ROOT } from "../constants/conf";
 
 
 export default () => (
@@ -19,13 +18,9 @@ export default () => (
                     <nav className="menu main-menu">
                         <ul>
                             {menuItems.map(item => {
-                                const linkObj = new URL(item.url, SITE_ROOT);
                                 return (
                                     <li key={item.title} className={item.classes}>
-                                        {linkObj.hash ?
-                                            <a href={item.url}>{item.title}</a>
-                                            :
-                                            <ExactNavLink to={item.url}>{item.title}</ExactNavLink>}
+                                        <ExactNavLink to={item.url}>{item.title}</ExactNavLink>}
                                     </li>
                                 )
                             })}
