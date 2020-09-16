@@ -3,7 +3,7 @@ import Safe from "react-safe";
 
 
 export default (props) => {
-    const {Html, Head, Body, children, state: { siteData, renderMeta } } = props;
+    const {Html, Head, Body, children, state: { siteData } } = props;
     return (
         <Html lang="en-US" className="no-fonts">
         <Head>

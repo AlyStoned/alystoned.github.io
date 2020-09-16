@@ -13,3 +13,7 @@ export function cleanPhone(str) {
 export function createMarkup(html) {
   return ({ __html: html })
 }
+
+export function castToBool(str) {
+  return str.toLowerCase() === "yes";
+}

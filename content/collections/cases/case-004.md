@@ -3,9 +3,10 @@ title: Mercuryo
 short_desc: Cherry Labs is a Palo-Alto-based startup building an AI system capable of converting video streams with humans into actionable data.
 desc: 4Taps created apps for each platform. Each game's social stream is the new way to follow live sports on-the-go, even if the user is away from the TV.
 background: "#F4EEE7"
+show_in_review_block: "No"
 reviewer: Nish Patel
 reviewer_position: Founder and CEO of ClutchPoints
-review_body: Cherry Labs sticks to the “Move fast and break things” rule releasing new products and algorithms on a monthly basis. We are very glad that 4Taps managed to cope with our tight schedule providing great communication and transparency in processes.
+review_body: 
 appstore: "#"
 googleplay: "#"
 icon: /images/cases/icons/mercuryo.png

@@ -1,4 +1,4 @@
-import { fetchLocalData } from './local-data'
+import { fetchLocalData } from "./localData";
 
 
 export default async function getContent() {

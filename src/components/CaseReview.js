@@ -11,7 +11,7 @@ export default (props) => {
         background,
         image_review,
         image_review_mobile,
-        image_review_mobile_centrize,
+        mobile_centrize,
         reviewer,
         reviewer_position,
         review_body,
@@ -19,8 +19,7 @@ export default (props) => {
     } = props;
 
     let imgClasses = "case-img";
-    const mobileCentrize = image_review_mobile_centrize.toLowerCase() === "yes";
-    if (mobileCentrize) imgClasses += " centrize-mobile";
+    if (mobile_centrize) imgClasses += " centrize-mobile";
 
     return (
         <li className="case-review" style={{background: background}}>
@@ -36,13 +35,14 @@ export default (props) => {
                     <div className="case-desc">{short_desc}</div>
                 </div>
 
+                {review_body &&
                 <div className="case-review-box">
                     <div className="review-body">{review_body}</div>
                     <div className="review-person">
                         <div className="reviewer">{reviewer}</div>
                         <div className="reviewer-position">{reviewer_position}</div>
                     </div>
-                </div>
+                </div>}
             </div>
 
             <div className="case-review-right">

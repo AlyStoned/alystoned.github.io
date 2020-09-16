@@ -1,4 +1,4 @@
-@import "../../deps";
+@import "../deps";
 
 
 $case_stack: 620px;
@@ -10,12 +10,10 @@ $case_stack: 620px;
   .case-head {
     margin-bottom: 55px;
 
-    .case-head-back {
+    .case-head-back-wrap {
       margin-top: 30px;
       margin-bottom: 61px;
-      display: flex;
       width: 100%;
-      cursor: pointer;
 
       @include for-tablet-portrait-up() {
         margin-top: 43px;
@@ -24,24 +22,28 @@ $case_stack: 620px;
         margin-top: 71px;
       }
 
-      &:hover {
-        opacity: .7;
-      }
+      .case-head-back {
+        display: flex;
+        cursor: pointer;
 
-      .case-head-arrow {
-        width: 20px;
-        margin-right: 10px;
-        @include for-desktop-up() {
-          width: 30px;
-          margin-right: 14px;
+        &:hover {
+          opacity: .7;
         }
-      }
 
-      .case-head-back-text {
-        font-weight: 800;
-        line-height: 152%;
-        @include font-size(16px);
-        color: $blue;
+        .case-head-arrow {
+          width: 20px;
+          margin-right: 10px;
+          @include for-desktop-up() {
+            margin-right: 14px;
+          }
+        }
+
+        .case-head-back-text {
+          font-weight: 800;
+          line-height: 152%;
+          @include font-size(20px);
+          color: $blue;
+        }
       }
     }
 

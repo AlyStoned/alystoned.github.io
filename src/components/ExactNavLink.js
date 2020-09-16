@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router";
 import { Link } from "./Router";
 
 
-const isActive = (classes) => {
+const isActive = (classes='') => {
     return ({ isCurrent }) => {
         return isCurrent ? { className: `${classes} active`.trim() } : { className: classes }
     }}

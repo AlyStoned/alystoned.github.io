@@ -58,7 +58,8 @@ export default () => {
 
                 <AboutBlock block={about_block} advantages={advantages} specialties={specialties} />
                 <ProcessBlock block={process_block} steps={steps} />
-                <CasesBlock block={cases_block} cases={cases.slice(0, 3)} />
+                <CasesBlock block={cases_block}
+                            cases={cases.filter(caseObj => caseObj.show_in_review_block).slice(0, 3)} />
                 {/*<ContactBlock />*/}
             </main>
 

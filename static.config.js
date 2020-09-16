@@ -8,7 +8,7 @@ import { createSharedData } from "react-static/node";
 import Document from "./src/components/Document";
 import routes from "./src/constants/routes";
 import getContent from "./src/utils/content";
-import { prepareCases } from "./src/utils/local-data";
+import { prepareCases } from "./src/utils/localData";
 import { SITE_ROOT } from "./src/constants/conf";
 // import siteMarkdown from "./content/site.md";
 
@@ -26,7 +26,6 @@ import { SITE_ROOT } from "./src/constants/conf";
 
 async function getRoutes() {
     const content = await getContent();
-    // console.log(content);
     const cases = createSharedData(prepareCases(content.cases));
 
     return [
@@ -51,7 +50,7 @@ async function getRoutes() {
             path: routes.cases.all,
             template: 'src/containers/Cases',
             getData: () => ({
-                page: content.pages.casesPage,
+                page: content.pages.cases,
             }),
             sharedData: {
                 cases,
@@ -69,7 +68,6 @@ async function getRoutes() {
             })),
         },
         {
-            is404: true,
             path: '404',
             template: 'src/containers/404',
         },

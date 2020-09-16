@@ -23,5 +23,6 @@ npm run build
 Deploy:
 
 ```bash
+export SITE_ROOT=https://alystoned.github.io
 npm run deploy
 ```

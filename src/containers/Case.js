@@ -2,9 +2,10 @@ import React from "react";
 import { useRouteData } from "react-static";
 
 import { Link } from "../components/Router";
-import BackLink from "../components/BackLink";
+// import BackLink from "../components/BackLink";
 import CaseTile from "../components/CaseTile";
 import routes from "../constants/routes";
+import { shuffle } from "../utils/helpers";
 
 import appStore from "../images/appstore.png";
 import googlePlay from "../images/googleplay.png";
@@ -12,20 +13,25 @@ import googlePlay from "../images/googleplay.png";
 
 export default function Case() {
     const { page, tiles_block, cases } = useRouteData();
+    const exclude_self = cases.filter(caseObj => caseObj.title !== page.title);
+    const tile_cases = shuffle(exclude_self).slice(0, 2);
+
     return (
         <main id="app-main">
             <div id="case">
                 <div className="case-head" style={{background: page.background}}>
                     <div className="container">
                         <div className="case-inner inner-padding-left">
-                            <Link className="case-head-back" to={routes.cases.all}>
-                                <svg className="case-head-arrow" viewBox="0 0 30 24" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 12M2 12L12 22M2 12H28.5" stroke="#0094FF"
-                                          strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
-                                <div className="case-head-back-text">Back to all cases</div>
-                            </Link>
+                            <div className="case-head-back-wrap">
+                                <Link className="case-head-back" to={routes.cases.all}>
+                                    <svg className="case-head-arrow" viewBox="0 0 30 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 12M2 12L12 22M2 12H28.5" stroke="#0094FF"
+                                              strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                    <div className="case-head-back-text">Back to all cases</div>
+                                </Link>
+                            </div>
 
                             <div className="case-head-left">
                                 <div className="case-head-box">
@@ -76,7 +82,7 @@ export default function Case() {
                     </div>
 
                     <ul className="case-tiles-list">
-                        {cases.map(caseData => {
+                        {tile_cases.map(caseData => {
                             return (
                                 <CaseTile {...caseData} key={caseData.title} />
                             )
@@ -85,7 +91,7 @@ export default function Case() {
                 </div>
             </div>
 
-            <BackLink />
+            {/*<BackLink />*/}
         </main>
     )
 }

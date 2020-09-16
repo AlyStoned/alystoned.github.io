@@ -3,6 +3,7 @@ title: ClutchPoints
 short_desc: ClutchPoints is the 6th largest sports media in the US.
 desc: 4Taps created apps for each platform. Each game's social stream is the new way to follow live sports on-the-go, even if the user is away from the TV.
 background: "linear-gradient(180deg, rgba(10, 51, 82, 0.15) 0%, rgba(72, 12, 31, 0.15) 100%)"
+show_in_review_block: "Yes"
 reviewer: Nish Patel
 reviewer_position: Founder and CEO of ClutchPoints
 review_body: ClutchPoints is the most innovative sports media company in America, we needed a tech team who would be able to outperform the market as we always do. 4Taps met the expectations to rapidly iterate on our product from the very first release in 2015. They did fantastic job designing, developing our apps and backend for them.
