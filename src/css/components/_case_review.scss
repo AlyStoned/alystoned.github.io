@@ -80,6 +80,9 @@ $case_stack: 620px;
 
     picture {
       height: 100%;
+      @include media_interval($case_stack, 0) {
+        width: 100%;
+      }
     }
     .case-img {
       height: 100%;
