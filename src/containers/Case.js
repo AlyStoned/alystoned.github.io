@@ -48,17 +48,18 @@ export default function Case() {
 
                                 <div className="case-links-box">
                                     {page.appstore &&
-                                    <a href={page.appstore} className="store">
+                                    <a href={page.appstore} className="store" target="_blank" rel="noreferrer">
                                         <img className="app-store" src={appStore} alt="app store" />
                                     </a>}
                                     {page.appstore &&
-                                    <a href={page.googleplay} className="store">
+                                    <a href={page.googleplay} className="store" target="_blank" rel="noreferrer">
                                         <img className="google-play" src={googlePlay} alt="google play" />
                                     </a>}
                                     {page.website &&
                                     <div className="website">
-                                        <span>Website: </span>
-                                        <a href={page.website}>{page.website}</a>
+                                        <a href={page.website} target="_blank" rel="noreferrer">
+                                            {(new URL(page.website)).hostname}
+                                        </a>
                                     </div>}
                                 </div>
                             </div>

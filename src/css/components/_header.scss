@@ -37,13 +37,14 @@
         display: inline-block;
         height: 23.8px;
         background-image: url("../images/brand.svg");
+        background-repeat: no-repeat;
       }
       &:before {
         width: 21.95px;
       }
       &:after {
         margin-left: 15.54px;
-        width: 63.36px;
+        width: 64px;
         background-position-x: -37.49px;
         transition: transform .2s, opacity .2s;
 
