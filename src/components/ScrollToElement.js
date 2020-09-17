@@ -6,13 +6,16 @@ export default (props) => {
     const location = useLocation();
 
     useEffect(() => {
-        const element = document.getElementById(location.hash.replace("#", ""));
-        console.log(location)
-        if (element) {
-            element.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
+        if (!location.hash) return
+
+        setTimeout(() => {
+                const element = document.getElementById(location.hash.replace("#", ""));
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            }, 0)
     }, [location]);
 
     return props.children
