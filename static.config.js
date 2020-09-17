@@ -26,7 +26,7 @@ import { SITE_ROOT } from "./src/constants/conf";
 
 async function getRoutes() {
     const content = await getContent();
-    const cases = createSharedData(prepareCases(content.cases));
+    const cases = createSharedData(prepareCases(content.cases).filter(caseObj => caseObj.visible));
 
     return [
         {

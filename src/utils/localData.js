@@ -14,6 +14,7 @@ export function prepareCases (data) {
             ...caseObj,
             slug: slug,
             url: reverse(routes.cases.detail.show, { slug: slug }),
+            visible: castToBool(caseObj.visible),
             show_in_review_block: castToBool(caseObj.show_in_review_block),
             mobile_centrize: castToBool(caseObj.image_review_mobile_centrize),
             body: createMarkup(caseObj.contents)

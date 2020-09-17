@@ -174,12 +174,26 @@ $case_stack: 620px;
       }
     }
 
-    .case-stores-box {
+    .case-links-box {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 87px;
 
       @include media_interval(0, $case_stack) {
         margin-top: 34px;
+      }
+
+      .website {
+        margin-top: 15px;
+        width: 100%;
+        @include font-size(16px);
+        @include for-tablet-landscape-up() {
+          @include font-size(18px);
+        }
+
+        a {
+          color: $blue;
+        }
       }
 
       .store {

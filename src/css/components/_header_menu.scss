@@ -41,8 +41,18 @@ $media_burger: $media-desktop;
 // десктоп меню в хедере
 .main-menu {
   display: inline-block;
+  transition: opacity .2s;
+  opacity: 0;
+  pointer-events: none;
+
   @include media_interval(0, $media_burger) {
     display: none;
+  }
+
+  .header-on-top & {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity .1s;
   }
 
   li {
@@ -67,7 +77,18 @@ $window_active_color: $blue;
   position: relative;
 
   @include media_interval($media_burger, 0) {
-    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    pointer-events: all;
+    transition: opacity .2s;
+    opacity: 1;
+
+    .header-on-top & {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .1s;
+    }
   }
 }
 
@@ -87,7 +108,7 @@ $window_active_color: $blue;
   background: $window_background;
   box-shadow: 0px 4px 12px rgba($black, 0.25);
   list-style: none;
-   //transition: left 0.4s;
+  //transition: left 0.4s;
 
   .header-menu-open & {
     display: block;
@@ -132,9 +153,6 @@ $menu_burger_line_space: 4px;
   text-align: left;
   vertical-align: middle;
   user-select: none;
-  @include media_interval($media_burger, 0) {
-    display: none;
-  }
 
   .burger {
     position: relative;

@@ -46,13 +46,20 @@ export default function Case() {
                                     <div className="case-desc">{page.desc}</div>
                                 </div>
 
-                                <div className="case-stores-box">
+                                <div className="case-links-box">
+                                    {page.appstore &&
                                     <a href={page.appstore} className="store">
                                         <img className="app-store" src={appStore} alt="app store" />
-                                    </a>
+                                    </a>}
+                                    {page.appstore &&
                                     <a href={page.googleplay} className="store">
                                         <img className="google-play" src={googlePlay} alt="google play" />
-                                    </a>
+                                    </a>}
+                                    {page.website &&
+                                    <div className="website">
+                                        <span>Website: </span>
+                                        <a href={page.website}>{page.website}</a>
+                                    </div>}
                                 </div>
                             </div>
 

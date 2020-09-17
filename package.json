@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^1.0.47",
     "@reach/router": "^1.2.1",
     "axios": "^0.20.0",
     "gray-matter": "^4.0.2",

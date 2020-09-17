@@ -1,4 +1,5 @@
 ---
+visible: "No"
 title: Adapty
 short_desc: SDK helping to grow and automate in-app subscriptions
 desc: 4Taps created apps for each platform. Each game's social stream is the new way to follow live sports on-the-go, even if the user is away from the TV.
@@ -7,8 +8,9 @@ show_in_review_block: "No"
 reviewer: Nish Patel
 reviewer_position: Founder and CEO of ClutchPoints
 review_body: 
-appstore: "#"
-googleplay: "#"
+website: "https://adapty.io/"
+appstore: 
+googleplay: 
 icon: /images/cases/icons/clutchpoints.png
 image_page:
   - path: /images/cases/pages/adapty/x1.png

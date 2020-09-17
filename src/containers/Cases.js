@@ -4,6 +4,7 @@ import { useRouteData } from "react-static";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 // import BackLink from "../components/BackLink";
+// import ContactBlock from "../components/blocks/Contact";
 import CaseReview from "../components/CaseReview";
 import CaseTile from "../components/CaseTile";
 
@@ -44,6 +45,7 @@ export default function Cases() {
                     </div>
                 </div>
 
+                {/*<ContactBlock />*/}
                 {/*<BackLink />*/}
             </main>
 

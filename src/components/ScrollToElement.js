@@ -25,5 +25,5 @@ export default (props) => {
         requestAnimationFrame(scrollToElement);
     }, [location]);
 
-    return props.children
+    return props.children || null
 }
