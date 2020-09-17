@@ -4,7 +4,7 @@ import routes from "./routes";
 export default [
     {
         title: "About",
-        url: `${routes.home}#about-section`,
+        url: routes.about,
         classes: ""
     },
     {
@@ -14,7 +14,7 @@ export default [
     },
     // {
     //     title: "Contact us",
-    //     url: `${routes.home}#contact-section`,
+    //     url: routes.contact,
     //     classes: "contact"
     // }
 ];

@@ -2,6 +2,7 @@ import React from "react";
 import { useRouteData } from "react-static";
 
 import ScrollToElement from "../components/ScrollToElement";
+import ExactNavLink from "../components/ExactNavLink";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AboutBlock from "../components/blocks/About";
@@ -9,6 +10,7 @@ import ProcessBlock from "../components/blocks/Process";
 import CasesBlock from "../components/blocks/Cases";
 // import ContactBlock from "../components/blocks/Contact";
 import { colors } from "../constants/styles";
+import routes from "../constants/routes";
 
 
 export default () => {
@@ -45,7 +47,7 @@ export default () => {
                     </div>
 
                     <div className="hero-next-wrapper">
-                        <a className="hero-next-link" href="#about-section">
+                        <ExactNavLink to={routes.about} className="hero-next-link">
                             <svg viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 2L12 12L22 2"
                                       stroke={colors.blue}
@@ -53,7 +55,7 @@ export default () => {
                                       strokeLinecap="round"
                                       strokeLinejoin="round" />
                             </svg>
-                        </a>
+                        </ExactNavLink>
                     </div>
                 </section>
 

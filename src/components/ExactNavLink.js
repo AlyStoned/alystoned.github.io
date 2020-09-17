@@ -11,10 +11,11 @@ const isActive = (classes='') => {
 
 const ExactNavLink = props => {
     const location = useLocation();
+    const exact = props.to === (location.pathname + location.hash);
 
     return (
         <Link getProps={isActive(props.className)}
-              replace={props.to === location.pathname}
+              replace={exact}
               {...props} />
     )}
 
