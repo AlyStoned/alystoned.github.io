@@ -8,7 +8,7 @@ export default [
         classes: ""
     },
     {
-        title: "Works",
+        title: "Cases",
         url: routes.cases.all,
         classes: ""
     },

@@ -30,6 +30,13 @@ export default function Cases() {
                                 )
                             })}
                         </ul>
+
+                        <div className="text-container inner-padding">
+                            <a className="link-to-other"
+                               href="https://readymag.com/4taps/975059/" target="_blank" rel="noreferrer">
+                                Other cases
+                            </a>
+                        </div>
                     </div>
                 </div>
 
