@@ -74,12 +74,22 @@ export default (props) => {
         }
       `;
 
-    const gtm = `
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-548JJS7');
+    // facebook Messenger
+    const fm = `
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
       `;
 
     return (
@@ -94,10 +104,17 @@ export default (props) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
                 <Safe.script>{fonts_js}</Safe.script>
-                <Safe.script>{gtm}</Safe.script>
             </Head>
             <Body>
                 {children}
+
+                <div id="fb-root" />
+                <Safe.script>{fm}</Safe.script>
+                <div className="fb-customerchat"
+                     attribution="setup_tool"
+                     page_id="100704918464990"
+                     greeting_dialog_display="hide"
+                     theme_color="#0094ff" />
             </Body>
         </Html>
     )
