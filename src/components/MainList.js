@@ -1,4 +1,5 @@
 import find from 'lodash/find';
+import sortBy from 'lodash/sortBy';
 import groupBy from 'lodash/groupBy';
 import React, { useState } from "react";
 import PropTypes from "prop-types";
@@ -84,7 +85,7 @@ export const MainList = ({ players }) => {
                 }}
                 lazy
             >
-                {Object.entries(groups).map(([group, cards], i) => {
+                {sortBy(Object.entries(groups), [o => o[0]]).map(([group, cards], i) => {
                     return (
                         <SwiperSlide key={group}>
                             <div className="tier" />
