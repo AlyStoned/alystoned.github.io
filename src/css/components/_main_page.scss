@@ -207,12 +207,12 @@ $mobile: 420px;
   }
 
   .swiper-navigation {
+    width: 290px;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 11;
     transform: translateX(-50%);
-    width: 290px;
   }
 
   .swiper-button-prev, .swiper-button-next {

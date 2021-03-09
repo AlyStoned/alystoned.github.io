@@ -7,7 +7,7 @@ import { RoutesNames } from "src/constants";
 export const NavLinks = ({ isAuthenticated, pathname }) => {
     switch (pathname) {
         case RoutesNames.login:
-            return null
+            return <Link to={RoutesNames.leaderboard}>Leaderboard</Link>
         case RoutesNames.home:
             return isAuthenticated ?
                 <Link to={RoutesNames.leaderboard}>Leaderboard</Link>

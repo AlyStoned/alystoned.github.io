@@ -5,7 +5,7 @@ import { isAuthenticated as isUserAuthenticated } from "src/storage";
 import { RoutesNames } from "src/constants";
 
 
-export const PrivateRoute = ({ component: Component, redirect, ...rest }) => {
+export const PrivateRoute = ({ component: Component, ...rest }) => {
     const isAuthenticated = isUserAuthenticated();
 
     return (
@@ -15,7 +15,7 @@ export const PrivateRoute = ({ component: Component, redirect, ...rest }) => {
                 return (
                     !isAuthenticated ? (
                         <Redirect to={{
-                            pathname: redirect || RoutesNames.login,
+                            pathname: RoutesNames.login,
                             state: { from: props.location }
                         }}/>
                     ) : <Component {...props}/>
