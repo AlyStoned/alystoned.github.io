@@ -9,7 +9,7 @@ const initialState = {
     login_consent: 'By participating, you consent to receive recurring autodialed SMS/MMS promotional messages. No purchase required. Msg&data rates may apply. Reply HELP for help, or STOP to end.',
     main_selection_rules: 'Choose 1 player from each tier. The team with the most total points scored through the whole tournament wins!',
     main_selected_players: 'Thanks for entering.',
-    main_empty: 'Hey! The contests are either live or unavailable today. Look out for updates on Frank\'s Instagram.',
+    main_empty: 'Contest 38 is closed! Must be following Frank & SBD',
     leaderboard_label: 'leaderboard',
     leaderboard_empty: '"March Madness" else didn\'t start',
     isLoading: false,

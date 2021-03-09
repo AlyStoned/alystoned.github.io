@@ -23,10 +23,6 @@ $mobile: 420px;
       margin-left: -25px;
       margin-right: -25px;
     }
-
-    @include media_interval(0, $mobile) {
-      padding: 30px 30px 50px;
-    }
   }
 
   .top {
@@ -89,10 +85,10 @@ $mobile: 420px;
 
   .list-item {
     @include media_interval(0, $mobile) {
-      @include flex-columns(1, 0, 20px);
+      @include flex-columns(2, 10px, 20px);
     }
     @include media_interval($mobile, $media-tablet-portrait) {
-      @include flex-columns(2, 15px, 15px);
+      @include flex-columns(2, 15px, 25px);
     }
     @include media_interval($media-tablet-portrait, $media-tablet-landscape) {
       @include flex-columns(2, 30px, 30px);
@@ -204,9 +200,26 @@ $mobile: 420px;
     }
   }
 
-  .swiper-pagination {
+  .swiper-ui {
     margin-top: 40px;
     margin-bottom: 40px;
+    position: relative;
+  }
+
+  .swiper-navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    transform: translateX(-50%);
+    width: 290px;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    //top: 100%;
+  }
+
+  .swiper-pagination {
     pointer-events: auto;
     white-space: nowrap;
     position: relative;
@@ -264,12 +277,13 @@ $mobile: 420px;
   @include media_interval(0, $mobile) {
     margin-left: -10px;
     margin-right: -10px;
+    margin-bottom: 35px;
   }
 }
 
 .thumb-list-item {
   @include media_interval(0, $mobile) {
-    @include flex-columns(3, 15px, 30px);
+    @include flex-columns(3, 15px, 22px);
   }
   @include media_interval($mobile, $media-tablet-portrait) {
     @include flex-columns(4, 15px, 30px);
@@ -284,6 +298,10 @@ $mobile: 420px;
 
 .thumb-list-item-tier {
   margin-bottom: 15px;
+
+  @include media_interval(0, $mobile) {
+    margin-bottom: 9px;
+  }
 }
 
 .thumb-list-item-card {
@@ -320,6 +338,10 @@ $mobile: 420px;
   }
   @include for-tablet-landscape-up() {
     font-size: rem(24);
+  }
+
+  @include media_interval(0, $mobile) {
+    margin-bottom: 10px;
   }
 }
 

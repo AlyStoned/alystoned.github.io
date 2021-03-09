@@ -5,14 +5,14 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Tween } from 'react-gsap';
 import { useDispatch, useSelector } from "react-redux";
-import SwiperCore, { Pagination, Lazy, EffectFade } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Lazy, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { UPDATE_USER_FULFILLED } from "src/redux/constants";
 import { showPreloader, hidePreloader, updateUser } from "src/redux/actions";
 
 
-SwiperCore.use([Pagination, Lazy, EffectFade]);
+SwiperCore.use([Navigation, Pagination, Lazy, EffectFade]);
 
 
 export const MainList = ({ players }) => {
@@ -23,7 +23,7 @@ export const MainList = ({ players }) => {
     const [selectedCards, setSelectedCards] = useState({});
     const isTierSelected = (tier) => selectedCards[tier];
 
-    const tiers = Object.keys(groups);
+    const tiers = Object.keys(groups).sort();
     const isFullSet = () => tiers.filter(group => selectedCards[group]).length === tiers.length;
 
     const handleCardClick = (group, id) => {
@@ -74,6 +74,10 @@ export const MainList = ({ players }) => {
                 spaceBetween={40}
                 effect="fade"
                 // fadeEffect={{ crossFade: true }}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
                 pagination={{
                     el: '.swiper-pagination',
                     renderBullet: function (index, className) {
@@ -113,7 +117,14 @@ export const MainList = ({ players }) => {
                 })}
             </Swiper>
 
-            <div className="swiper-pagination" />
+            <div className="swiper-ui">
+                <div className="swiper-navigation">
+                    <div className="swiper-button-prev" />
+                    <div className="swiper-button-next" />
+                </div>
+
+                <div className="swiper-pagination" />
+            </div>
 
             <div className="bottom text-block">
                 <div className="list list-thumbs">

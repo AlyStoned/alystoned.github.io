@@ -73,7 +73,9 @@ export const formattingPlayersResponse = (data) => {
             id: card.id,
             name: fields["Name"],
             tier: fields["Tier"],
-            image_url: first_image.url
+            // image_url: first_image.url,
+            image_url: first_image['thumbnails']['large']['url'],
+            // image_url_mobile: first_image['thumbnails']['large']['url']
         }
     });
 };
