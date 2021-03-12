@@ -7,7 +7,7 @@ import { Tween } from 'react-gsap';
 
 import { CREATE_USER_FULFILLED } from "src/redux/constants";
 // import ErrorWithDelay from "./ErrorWithDelay";
-import { createUser, showPreloader } from "src/redux/actions";
+import { createUser, showPreloader, hidePreloader } from "src/redux/actions";
 import { login } from "src/storage";
 // import { fetchUser } from "src/api";
 
@@ -113,6 +113,7 @@ export const LoginForm = ({ next }) => {
             ({value, action}) => {
                 if (action && action.type === CREATE_USER_FULFILLED) {
                     login(value.data.id);
+                    dispatch(hidePreloader());
                     history.push(next);
                 }
             }, (error) => {});
