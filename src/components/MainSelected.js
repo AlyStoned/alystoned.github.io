@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import { Tween } from "react-gsap";
 
+import { createMarkup } from "src/utils";
+
 
 export const MainSelected = ({ players }) => {
     const content = useSelector(state => state.content);
@@ -16,9 +18,8 @@ export const MainSelected = ({ players }) => {
                     }}
                     duration={1.2}
                 >
-                    <div className="top-label">
-                        {content.main_selected_players}
-                    </div>
+                    <div className="top-label text-markdown"
+                         dangerouslySetInnerHTML={createMarkup(content.main_selected_players)} />
                 </Tween>
             </div>
 

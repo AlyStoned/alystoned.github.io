@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { UPDATE_USER_FULFILLED } from "src/redux/constants";
 import { showPreloader, hidePreloader, updateUser } from "src/redux/actions";
+import { createMarkup } from "src/utils";
 
 
 SwiperCore.use([Navigation, Pagination, Lazy, EffectFade]);
@@ -64,9 +65,8 @@ export const MainList = ({ players }) => {
                     }}
                     duration={1.2}
                 >
-                    <div className="top-label">
-                        {content.main_selection_rules}
-                    </div>
+                    <div className="top-label text-markdown"
+                         dangerouslySetInnerHTML={createMarkup(content.main_selection_rules)} />
                 </Tween>
             </div>
 

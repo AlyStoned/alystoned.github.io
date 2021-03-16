@@ -6,7 +6,7 @@ import renderer from "./renderer";
 
 marked.use({ renderer });
 
-const baseID = 'app4ZVTzYjvRelW3e';
+const baseID = 'appEhFhZN0JNjcDgv';
 
 const baseURL = (() => {
     const environment = process.env.NODE_ENV;
@@ -24,7 +24,7 @@ export const axiosAPI = axios.create({
     baseURL: baseURL,
     timeout: 5000,
     headers: {
-        Authorization: "Bearer keyQcY7BJrFix6otc",
+        Authorization: "Bearer keyMZ0LJwZkwSeJuQ",
         "Content-Type": "application/json",
         accept: "application/json",
     },
@@ -48,7 +48,7 @@ export const urls = {
 
 export const formattingContentResponse = (data) => {
     const { records } = data;
-    if (!records.length) return
+    if (!records.length) return;
 
     const { fields } = records[0];
     return {
@@ -56,8 +56,8 @@ export const formattingContentResponse = (data) => {
         login_label: fields["login_label"],
         login_text: fields["login_text"],
         login_consent: marked(fields["login_consent"]),
-        main_selection_rules: fields["main_selection_rules"],
-        main_selected_players: fields["main_selected_players"],
+        main_selection_rules: marked(fields["main_selection_rules"]),
+        main_selected_players: marked(fields["main_selected_players"]),
         main_empty: marked(fields["main_empty"]),
         leaderboard_label: fields["leaderboard_label"],
         leaderboard_empty: marked(fields["leaderboard_empty"]),
