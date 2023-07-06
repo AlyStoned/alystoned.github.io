@@ -1,5 +1,5 @@
-export const RoutesNames = {
+export default {
    home: '/',
    login: '/login',
-   leaderboard: '/leaderboard'
+   thanks: '/thanks'
 };

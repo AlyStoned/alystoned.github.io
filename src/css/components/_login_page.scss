@@ -6,14 +6,9 @@ $preview_w: 890;
 $preview_h: 365;
 
 
-.login-page {
-  padding-top: $grid-gutter-width;
-  padding-bottom: $grid-gutter-width;
-}
-
 // head
 .head-label-wrapper {
-  background-color: #706e6f;
+  background-color: $white;
   @include vpad(4px, 3px);
   @include for-tablet-portrait-up() {
     margin-top: 20px;

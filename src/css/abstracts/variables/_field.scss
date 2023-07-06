@@ -11,15 +11,15 @@ $column-space-mobile: 15px;
 
 
 // input text
-$input-color: $light;
+$input-color: $gray;
 $placeholder-color: rgba($input_color, .5);
 $input-color-error: $red;
 
 // input bg
-$input-bg_color: $gray;
+$input-bg_color: $white;
 $input-bg-error: rgba(233, 68, 68, 0.1);
 
 // // input border
-$border-color: $dark-gray;
-$border-color-hover: rgba($dark-gray, .4);
+$border-color: rgba($black, .2);
+$border-color-hover: $gray;
 $border-color-invalid: $red;

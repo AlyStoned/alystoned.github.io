@@ -1,11 +1,4 @@
-@import "deps";
-@import "fonts";
-
-
-:root {
-  --swiper-navigation-size: 30px;
-  --swiper-theme-color: #{$text-color};
-}
+@import 'deps';
 
 // reset
 p {
@@ -22,21 +15,25 @@ a {
 
   &:hover {
     text-decoration: none;
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
+html {
+  // Remove Scrollbar "Jumping"
+  margin-right: calc(100% - 100vw);
+}
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   overflow-x: hidden;
   color: $text-color;
-  background-color: $dark-gray;
-  font-family: "ProximaNova", Arial, sans-serif;
   line-height: 1;
+  font-family: sans-serif;
   font-size: 0;
 }
 
@@ -49,14 +46,25 @@ img {
 #app-page {
   overflow: hidden;
   min-height: 100vh;
+  background-color: $light-gray;
+  @include for-tablet-landscape-up() {
+    display: flex;
+  }
 }
 
 #app-main {
   display: flex;
   min-height: inherit;
   flex-direction: column;
-  //justify-content: center;
+  justify-content: center;
   box-sizing: border-box;
+  padding-top: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+
+  @include for-tablet-landscape-up() {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
 }
 
 .container {
