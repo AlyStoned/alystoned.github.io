@@ -25,7 +25,8 @@ export const axiosInstance = axios.create({
     baseURL: baseURL,
     timeout: 5000,
     headers: {
-        Authorization: `Bearer ${environment === 'development' ? 'keyQcY7BJrFix6otc' : 'keyMZ0LJwZkwSeJuQ'}`, // dev is my
+        // Authorization: `Bearer ${environment === 'development' ? 'keyQcY7BJrFix6otc' : 'keyMZ0LJwZkwSeJuQ'}`, // dev is my
+        Authorization: `Bearer ${environment === 'development' ? 'keyQcY7BJrFix6otc' : 'keyQcY7BJrFix6otc'}`, // dev is my
         'Content-Type': 'application/json',
         accept: 'application/json',
     },
